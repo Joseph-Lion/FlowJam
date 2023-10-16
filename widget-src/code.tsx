@@ -15,11 +15,13 @@ function PropertyMenuWidget() {
     { option: "event", label: "Event" },
     { option: "process", label: "Process" },
     { option: "action", label: "Action" },
+    { option: "interaction", label: "Interaction" },
     { option: "decision", label: "Decision" },
     { option: "input", label: "Input" },
     { option: "output", label: "Output" },
     { option: "manual", label: "Manual" },
     { option: "error", label: "Error" },
+    { option: "issue", label: "Issue" },
   ];
   const eventTypeOptions = [
     { option: "layout-1", label: "Full Step" },
@@ -56,19 +58,21 @@ function PropertyMenuWidget() {
         tooltip: "Color selector",
         selectedOption: color,
         options: [
+          { option: "#F9F9F9", tooltip: "Snow" },
           { option: "#E6E6E6", tooltip: "Grey" },
+          { option: "#CCCCCC", tooltip: "Mid Grey" },
           { option: "#757575", tooltip: "Slate" },
+          { option: "#CD8E44", tooltip: "Sand" },
           { option: "#B4E761", tooltip: "Lime" },
           { option: "#90B94E", tooltip: "Leaf" },
           { option: "#FFCD29", tooltip: "Yolk" },
           { option: "#FFA629", tooltip: "Marmalade" },
           { option: "#FB6543", tooltip: "Tomato" },
           { option: "#0D99FF", tooltip: "Sky" },
-          { option: "#EEB992", tooltip: "Peach" },
+          { option: "#FFAFA8", tooltip: "Peach" },
           { option: "#73BFBB", tooltip: "Ocean" },
           { option: "#FF63A5", tooltip: "Fuchsia" },
           { option: "#9747FF", tooltip: "Cadburys" },
-          { option: "#ffffff", tooltip: "Snow" },
         ],
       },
       {
@@ -556,27 +560,29 @@ function PropertyMenuWidget() {
 
       {eventType === "layout-5" && (
         <>
+      
           <Input // Entry Exit
             value={startEnd}
             horizontalAlignText="center"
-            verticalAlignText="center"
             onTextEditEnd={(e) => {
               const sanitizedValue = e.characters.slice(0, 10);
               setStartEnd(sanitizedValue);
             }}
-            fontSize={40}
+            fontSize={24}
             letterSpacing={-0.4}
             lineHeight={54}
-            fill={colourDarkGrey}
-            width={220}
-            height={220}
+            fill={color}
+            width={125}
+            height={125}
+            verticalAlignText="center"
             inputFrameProps={{
-              fill: color,
+              fill: "#fff",
               strokeWidth: 4,
               strokeAlign: "center",
             }}
             inputBehavior="wrap"
           />
+          
         </>
       )}
 
@@ -747,6 +753,7 @@ function PropertyMenuWidget() {
           />
         </>
       )}
+      
     </AutoLayout>
   );
 }
