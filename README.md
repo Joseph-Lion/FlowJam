@@ -1,8 +1,10 @@
 # FlowJam
 A Flow Diagram Tool Kit for FigJam
 
----
 
-NPM Install
-Run "Terminal > Run Build Task..."
-Run "NPM: Watch"
+
+
+
+1) NPM Install
+2) Run "Terminal > Run Build Task..."
+3) Run "NPM: Watch"
